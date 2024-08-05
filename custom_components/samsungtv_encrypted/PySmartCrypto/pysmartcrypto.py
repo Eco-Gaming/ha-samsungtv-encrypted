@@ -55,7 +55,7 @@ class PySmartCrypto():
         secondStepURL = self.GetFullRequestUri(1, self.AppId, self.deviceId)
         secondStepResponse = requests.post(secondStepURL, content).text
         print('secondStepResponse: ' + secondStepResponse)
-        output = re.search('request_id.*?(\d).*?GeneratorClientHello.*?:.*?(\d[0-9a-zA-Z]*)', secondStepResponse, flags=re.IGNORECASE)
+        output = re.search(r"request_id.*?(\d).*?GeneratorClientHello.*?:.*?(\d[0-9a-zA-Z]*)", secondStepResponse, flags=re.IGNORECASE)
         if output is None:
             return False
         requestId = output.group(1)
@@ -71,7 +71,7 @@ class PySmartCrypto():
         if "secure-mode" in thirdStepResponse:
             print("TODO: Implement handling of encryption flag!!!!")
             sys.exit(-1)
-        output = re.search('ClientAckMsg.*?:.*?(\d[0-9a-zA-Z]*).*?session_id.*?(\d)', thirdStepResponse, flags=re.IGNORECASE)
+        output = re.search(r"ClientAckMsg.*?:.*?(\d[0-9a-zA-Z]*).*?session_id.*?(\d)", thirdStepResponse, flags=re.IGNORECASE)
         if output is None:
             print("Unable to get session_id and/or ClientAckMsg!!!");
             sys.exit(-1)
