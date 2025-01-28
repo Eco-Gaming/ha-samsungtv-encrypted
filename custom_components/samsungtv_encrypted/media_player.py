@@ -17,16 +17,10 @@ from homeassistant.components.media_player import (
     MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
+    MediaType,
     PLATFORM_SCHEMA
 )
-from homeassistant.components.media_player.const import (
-    MEDIA_TYPE_CHANNEL,
-    MEDIA_TYPE_URL,
-    MEDIA_TYPE_VIDEO,
-    MEDIA_TYPE_PLAYLIST,
-    MEDIA_TYPE_MUSIC,
-    MEDIA_TYPE_APP
-)
+
 from homeassistant.const import (
     CONF_HOST,
     CONF_MAC,
@@ -406,10 +400,10 @@ class SamsungTVDevice(MediaPlayerEntity):
                           '<InstanceID>0</InstanceID><Channel>Master</Channel><DesiredVolume>' + volset +
                           '</DesiredVolume>', '')
 
-    async def async_play_media(self, media_type, media_id, **kwargs):
+    async def async_play_media(self, ype, media_id, **kwargs):
         """Support changing a channel."""
         _LOGGER.debug("function async_play_media")
-        if media_type == MEDIA_TYPE_CHANNEL:
+        if media_type == MediaType.CHANNEL:
         # media_id should only be a channel number
             try:
                 cv.positive_int(media_id)
