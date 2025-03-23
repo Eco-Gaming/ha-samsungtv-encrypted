@@ -400,7 +400,7 @@ class SamsungTVDevice(MediaPlayerEntity):
                           '<InstanceID>0</InstanceID><Channel>Master</Channel><DesiredVolume>' + volset +
                           '</DesiredVolume>', '')
 
-    async def async_play_media(self, ype, media_id, **kwargs):
+    async def async_play_media(self, media_type, media_id, **kwargs):
         """Support changing a channel."""
         _LOGGER.debug("function async_play_media")
         if media_type == MediaType.CHANNEL:
