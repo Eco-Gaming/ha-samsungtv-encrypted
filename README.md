@@ -1,3 +1,10 @@
+> [!NOTE]
+> **Archival of this fork:**
+> 
+> I'm archiving this fork, as it's been a while since I've had a Samsung TV, and I'm no longer using this integration.
+
+<hr>
+
 [![](https://img.shields.io/github/release/sermayoral/ha-samsungtv-encrypted/all.svg?style=for-the-badge)](https://github.com/sermayoral/ha-samsungtv-encrypted/releases)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 [![](https://img.shields.io/github/license/sermayoral/ha-samsungtv-encrypted?style=for-the-badge)](LICENSE)
